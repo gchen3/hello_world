@@ -279,3 +279,62 @@
 [2026-04-23 10:56:05] [INFO] Project root resolved to C:/R-projects/hello_world
 [2026-04-23 10:56:05] [INFO] Setup complete.
 [2026-04-23 10:56:07] [INFO] Final tables and figures written.
+[2026-04-23 11:26:35] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:26:35] [INFO] Setup complete.
+[2026-04-23 11:26:35] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:26:35] [INFO] Setup complete.
+[2026-04-23 11:26:36] [INFO] Saved raw Grunfeld data.
+[2026-04-23 11:26:37] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 11:26:37] [INFO] Data source notes updated.
+[2026-04-23 11:26:37] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:26:37] [INFO] Setup complete.
+[2026-04-23 11:26:37] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 11:26:37] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 11:26:37] [INFO] Cleaning report written.
+[2026-04-23 11:26:37] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:26:37] [INFO] Setup complete.
+[2026-04-23 11:26:37] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 11:26:37] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 11:26:37] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:26:37] [INFO] Setup complete.
+[2026-04-23 11:26:37] [INFO] Summary statistics saved.
+[2026-04-23 11:26:37] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:26:37] [INFO] Setup complete.
+[2026-04-23 11:26:37] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 11:26:37] [INFO] Main regression models saved.
+[2026-04-23 11:26:37] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:26:37] [INFO] Setup complete.
+[2026-04-23 11:26:37] [INFO] Robustness models saved.
+[2026-04-23 11:26:37] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:26:37] [INFO] Setup complete.
+[2026-04-23 11:26:43] [INFO] Final tables and figures written.
+[2026-04-23 11:27:24] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:27:24] [INFO] Setup complete.
+[2026-04-23 11:27:24] [INFO] Saved raw Grunfeld data.
+[2026-04-23 11:27:24] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 11:27:24] [INFO] Data source notes updated.
+[2026-04-23 11:27:25] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 11:27:25] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 11:27:25] [INFO] Cleaning report written.
+[2026-04-23 11:27:25] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 11:27:25] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 11:27:25] [INFO] Summary statistics saved.
+[2026-04-23 11:27:25] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 11:27:25] [INFO] Main regression models saved.
+[2026-04-23 11:27:25] [INFO] Robustness models saved.
+[2026-04-23 11:27:28] [INFO] Final tables and figures written.
+[2026-04-23 11:27:44] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 11:27:44] [INFO] Setup complete.
+[2026-04-23 11:27:44] [INFO] Saved raw Grunfeld data.
+[2026-04-23 11:27:45] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 11:27:45] [INFO] Data source notes updated.
+[2026-04-23 11:27:45] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 11:27:45] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 11:27:45] [INFO] Cleaning report written.
+[2026-04-23 11:27:45] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 11:27:45] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 11:27:45] [INFO] Summary statistics saved.
+[2026-04-23 11:27:45] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 11:27:45] [INFO] Main regression models saved.
+[2026-04-23 11:27:45] [INFO] Robustness models saved.
+[2026-04-23 11:27:48] [INFO] Final tables and figures written.

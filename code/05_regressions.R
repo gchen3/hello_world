@@ -1,43 +1,19 @@
-script_source_files <- vapply(
-  sys.frames(),
-  function(frame) {
-    if (is.null(frame$ofile)) {
-      return(NA_character_)
-    }
+source(here::here("code", "00_setup.R"))
 
-    frame$ofile
-  },
-  character(1)
-)
-script_source_files <- script_source_files[!is.na(script_source_files)]
+grunfeld_analysis <- readRDS(here::here("data", "processed", "grunfeld_analysis.rds"))
+did_data <- readRDS(here::here("data", "processed", "card_krueger_analysis.rds"))
 
-script_dir <- if (length(script_source_files) > 0) {
-  dirname(normalizePath(tail(script_source_files, 1), winslash = "/", mustWork = FALSE))
-} else if (file.exists("00_setup.R")) {
-  normalizePath(".", winslash = "/", mustWork = FALSE)
-} else {
-  normalizePath("code", winslash = "/", mustWork = FALSE)
-}
-
-source(file.path(script_dir, "00_setup.R"))
-
-grunfeld_analysis <- readRDS(path_dir("data", "processed", "grunfeld_analysis.rds"))
-
-get_fitstat <- function(model, type) {
-  value <- tryCatch(
-    fixest::fitstat(model, type)[[type]],
-    error = function(e) NA_real_
-  )
-
+safe_fitstat <- function(model, type) {
+  value <- tryCatch(fixest::fitstat(model, type)[[type]], error = function(e) NA_real_)
   as.numeric(value)
 }
 
-get_wald_test <- function(model, keep_pattern) {
+safe_wald <- function(model) {
   test <- tryCatch(
     {
       captured_test <- NULL
       utils::capture.output(
-        captured_test <- fixest::wald(model, keep = keep_pattern)
+        captured_test <- fixest::wald(model, keep = "log_value|log_capital|lag_log_value|lag_log_capital")
       )
       captured_test
     },
@@ -45,18 +21,13 @@ get_wald_test <- function(model, keep_pattern) {
   )
 
   if (is.null(test)) {
-    return(c(statistic = NA_real_, p_value = NA_real_, df1 = NA_real_, df2 = NA_real_))
+    return(c(statistic = NA_real_, p_value = NA_real_))
   }
 
-  c(
-    statistic = unname(test$stat),
-    p_value = unname(test$p),
-    df1 = unname(test$df1),
-    df2 = unname(test$df2)
-  )
+  c(statistic = unname(test$stat), p_value = unname(test$p))
 }
 
-get_bp_style_test <- function(model) {
+bp_style_test <- function(model) {
   model_residuals <- stats::residuals(model)
   model_fitted <- stats::fitted(model)
   complete_rows <- stats::complete.cases(model_residuals, model_fitted)
@@ -73,42 +44,6 @@ get_bp_style_test <- function(model) {
   c(
     statistic = unname(statistic),
     p_value = stats::pchisq(statistic, df = 1, lower.tail = FALSE)
-  )
-}
-
-build_model_diagnostics <- function(models) {
-  dplyr::bind_rows(
-    lapply(names(models), function(model_name) {
-      model <- models[[model_name]]
-      wald_test <- get_wald_test(model, "log_value|log_capital|lag_log_value|lag_log_capital")
-      bp_test <- get_bp_style_test(model)
-
-      data.frame(
-        model = model_name,
-        observations = get_fitstat(model, "n"),
-        r_squared = get_fitstat(model, "r2"),
-        adjusted_r_squared = get_fitstat(model, "ar2"),
-        within_r_squared = get_fitstat(model, "wr2"),
-        within_adjusted_r_squared = get_fitstat(model, "war2"),
-        joint_regressor_f_statistic = wald_test[["statistic"]],
-        joint_regressor_p_value = wald_test[["p_value"]],
-        bp_style_statistic = bp_test[["statistic"]],
-        bp_style_p_value = bp_test[["p_value"]],
-        stringsAsFactors = FALSE
-      )
-    })
-  )
-}
-
-build_correlation_table <- function(data) {
-  variables <- c("log_invest", "log_value", "log_capital")
-  correlation_matrix <- stats::cor(data[variables], use = "complete.obs")
-
-  data.frame(
-    variable = rownames(correlation_matrix),
-    correlation_matrix,
-    row.names = NULL,
-    check.names = FALSE
   )
 }
 
@@ -140,27 +75,45 @@ grunfeld_models <- list(
   )
 )
 
-diagnostics <- build_model_diagnostics(grunfeld_models)
-correlation_table <- build_correlation_table(grunfeld_analysis)
+diagnostics <- dplyr::bind_rows(lapply(names(grunfeld_models), function(model_name) {
+  model <- grunfeld_models[[model_name]]
+  wald_test <- safe_wald(model)
+  bp_test <- bp_style_test(model)
 
-did_models <- NULL
-did_path <- path_dir("data", "processed", "card_krueger_analysis.rds")
-
-if (file.exists(did_path)) {
-  did_data <- readRDS(did_path)
-
-  did_models <- list(
-    "DID" = fixest::feols(
-      employment ~ treated + post + treated_post,
-      data = did_data,
-      vcov = "hetero"
-    )
+  data.frame(
+    model = model_name,
+    observations = safe_fitstat(model, "n"),
+    r_squared = safe_fitstat(model, "r2"),
+    adjusted_r_squared = safe_fitstat(model, "ar2"),
+    within_r_squared = safe_fitstat(model, "wr2"),
+    within_adjusted_r_squared = safe_fitstat(model, "war2"),
+    joint_regressor_f_statistic = wald_test[["statistic"]],
+    joint_regressor_p_value = wald_test[["p_value"]],
+    bp_style_statistic = bp_test[["statistic"]],
+    bp_style_p_value = bp_test[["p_value"]],
+    stringsAsFactors = FALSE
   )
+}))
 
-  log_message("Estimated DID example model.")
-} else {
-  log_message("No DID analysis data found. Main regression script skipped the DID model.", level = "WARN")
-}
+correlation_matrix <- stats::cor(
+  grunfeld_analysis[c("log_invest", "log_value", "log_capital")],
+  use = "complete.obs"
+)
+
+correlation_table <- data.frame(
+  variable = rownames(correlation_matrix),
+  correlation_matrix,
+  row.names = NULL,
+  check.names = FALSE
+)
+
+did_models <- list(
+  "DID" = fixest::feols(
+    employment ~ treated + post + treated_post,
+    data = did_data,
+    vcov = "hetero"
+  )
+)
 
 main_results <- list(
   grunfeld_models = grunfeld_models,
@@ -174,11 +127,10 @@ main_results <- list(
       "The lagged covariates model uses one-year lagged market value and capital stock."
     ),
     did = c(
-      "DID is estimated only when CardKrueger analysis data is available.",
-      "The example DID model uses heteroskedasticity-robust standard errors."
+      "The DID model uses heteroskedasticity-robust standard errors."
     )
   )
 )
 
-save_rds(main_results, path_dir("data", "processed", "main_models.rds"))
-log_message("Main regression models saved.")
+saveRDS(main_results, here::here("data", "processed", "main_models.rds"))
+log_message("Saved main regression models.")

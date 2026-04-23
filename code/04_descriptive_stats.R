@@ -1,31 +1,22 @@
-script_source_files <- vapply(
-  sys.frames(),
-  function(frame) {
-    if (is.null(frame$ofile)) {
-      return(NA_character_)
-    }
+source(here::here("code", "00_setup.R"))
 
-    frame$ofile
-  },
-  character(1)
+grunfeld_analysis <- readRDS(here::here("data", "processed", "grunfeld_analysis.rds"))
+card_krueger_analysis <- readRDS(here::here("data", "processed", "card_krueger_analysis.rds"))
+
+summary_variables <- c(
+  investment = "Investment",
+  market_value = "Market value",
+  capital_stock = "Capital stock",
+  log_invest = "Log investment",
+  log_value = "Log market value",
+  log_capital = "Log capital stock"
 )
-script_source_files <- script_source_files[!is.na(script_source_files)]
 
-script_dir <- if (length(script_source_files) > 0) {
-  dirname(normalizePath(tail(script_source_files, 1), winslash = "/", mustWork = FALSE))
-} else if (file.exists("00_setup.R")) {
-  normalizePath(".", winslash = "/", mustWork = FALSE)
-} else {
-  normalizePath("code", winslash = "/", mustWork = FALSE)
-}
-
-source(file.path(script_dir, "00_setup.R"))
-
-summarise_variable <- function(data, column, label) {
-  values <- data[[column]]
+summary_table <- dplyr::bind_rows(lapply(names(summary_variables), function(column) {
+  values <- grunfeld_analysis[[column]]
 
   data.frame(
-    variable = label,
+    variable = summary_variables[[column]],
     n = sum(!is.na(values)),
     mean = mean(values, na.rm = TRUE),
     sd = stats::sd(values, na.rm = TRUE),
@@ -33,29 +24,11 @@ summarise_variable <- function(data, column, label) {
     max = max(values, na.rm = TRUE),
     stringsAsFactors = FALSE
   )
-}
-
-grunfeld_analysis <- readRDS(path_dir("data", "processed", "grunfeld_analysis.rds"))
-did_analysis_path <- path_dir("data", "processed", "card_krueger_analysis.rds")
-did_is_available <- file.exists(did_analysis_path)
-
-summary_table <- dplyr::bind_rows(
-  summarise_variable(grunfeld_analysis, "investment", "Investment"),
-  summarise_variable(grunfeld_analysis, "market_value", "Market value"),
-  summarise_variable(grunfeld_analysis, "capital_stock", "Capital stock"),
-  summarise_variable(grunfeld_analysis, "log_invest", "Log investment"),
-  summarise_variable(grunfeld_analysis, "log_value", "Log market value"),
-  summarise_variable(grunfeld_analysis, "log_capital", "Log capital stock")
-)
+}))
 
 sample_counts <- data.frame(
-  dataset = c("grunfeld", if (did_is_available) "card_krueger"),
-  rows = c(
-    nrow(grunfeld_analysis),
-    if (did_is_available) {
-      nrow(readRDS(did_analysis_path))
-    }
-  ),
+  dataset = c("grunfeld", "card_krueger"),
+  rows = c(nrow(grunfeld_analysis), nrow(card_krueger_analysis)),
   stringsAsFactors = FALSE
 )
 
@@ -64,9 +37,8 @@ summary_artifacts <- list(
   sample_counts = sample_counts
 )
 
-save_rds(summary_artifacts, path_dir("data", "processed", "summary_statistics.rds"))
+saveRDS(summary_artifacts, here::here("data", "processed", "summary_statistics.rds"))
+readr::write_csv(summary_table, here::here("output", "tables", "table_1_summary_statistics.csv"))
+readr::write_csv(sample_counts, here::here("output", "logs", "sample_counts.csv"))
 
-readr::write_csv(summary_table, path_dir("output", "tables", "table_1_summary_statistics.csv"))
-readr::write_csv(sample_counts, path_dir("output", "logs", "sample_counts.csv"))
-
-log_message("Summary statistics saved.")
+log_message("Saved summary statistics.")

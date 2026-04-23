@@ -1,0 +1,281 @@
+[2026-04-22 18:12:38] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-22 18:12:38] [INFO] Setup complete.
+[2026-04-22 18:12:41] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-22 18:12:41] [INFO] Setup complete.
+[2026-04-22 18:12:46] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-22 18:12:46] [INFO] Setup complete.
+[2026-04-22 18:12:50] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-22 18:12:50] [INFO] Setup complete.
+[2026-04-23 10:21:35] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:21:35] [INFO] Setup complete.
+[2026-04-23 10:21:39] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:21:39] [INFO] Setup complete.
+[2026-04-23 10:24:56] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:24:56] [INFO] Setup complete.
+[2026-04-23 10:24:56] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:24:56] [INFO] Setup complete.
+[2026-04-23 10:25:15] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:25:15] [INFO] Setup complete.
+[2026-04-23 10:25:15] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:25:15] [INFO] Setup complete.
+[2026-04-23 10:25:16] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:25:17] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:25:17] [INFO] Data source notes updated.
+[2026-04-23 10:25:17] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:25:17] [INFO] Setup complete.
+[2026-04-23 10:25:17] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 10:25:17] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 10:25:17] [INFO] Cleaning report written.
+[2026-04-23 10:25:17] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:25:17] [INFO] Setup complete.
+[2026-04-23 10:25:17] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 10:25:17] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 10:25:17] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:25:17] [INFO] Setup complete.
+[2026-04-23 10:25:17] [INFO] Summary statistics saved.
+[2026-04-23 10:25:17] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:25:17] [INFO] Setup complete.
+[2026-04-23 10:25:17] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 10:25:17] [INFO] Main regression models saved.
+[2026-04-23 10:25:17] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:25:17] [INFO] Setup complete.
+[2026-04-23 10:25:17] [INFO] Robustness models saved.
+[2026-04-23 10:25:17] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:25:17] [INFO] Setup complete.
+[2026-04-23 10:25:22] [INFO] Final tables and figures written.
+[2026-04-23 10:26:36] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:36] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:36] [INFO] Setup complete.
+[2026-04-23 10:26:36] [INFO] Setup complete.
+[2026-04-23 10:26:36] [INFO] Project root resolved to C:/R-projects/hello_world[2026-04-23 10:26:36] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:36] [INFO] Setup complete.
+[2026-04-23 10:26:36] [INFO] Setup complete.
+[2026-04-23 10:26:37] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:26:37] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:26:38] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:26:38] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:26:38] [INFO] Data source notes updated.
+
+[2026-04-23 10:26:38] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:38] [INFO] Setup complete.
+[2026-04-23 10:26:38] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:38] [INFO] Setup complete.
+[2026-04-23 10:26:38] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 10:26:38] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 10:26:38] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+026-04-23 10:26:38] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 10:26:38] [INFO] Cleaning report written.
+[2026-04-23 10:26:38] [INFO] Cleaning report written.
+[2026-04-23 10:26:38] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:38] [INFO] Setup complete.
+[2026-04-23 10:26:38] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:38] [INFO] Setup complete.
+[2026-04-23 10:26:38] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 10:26:38] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 10:26:38] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 10:26:38] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 10:26:38] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:38] [INFO] Setup complete.
+[2026-04-23 10:26:38] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:38] [INFO] Setup complete.
+[2026-04-23 10:26:38] [INFO] Summary statistics saved.
+
+[2026-04-23 10:26:38] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:38] [INFO] Setup complete.
+[2026-04-23 10:26:38] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:38] [INFO] Setup complete.
+[2026-04-23 10:26:38] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 10:26:38] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 10:26:38] [INFO] Main regression models saved.
+[2026-04-23 10:26:38] [INFO] Main regression models saved.
+[2026-04-23 10:26:39] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:39] [INFO] Setup complete.
+[2026-04-23 10:26:39] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:39] [INFO] Setup complete.
+[2026-04-23 10:26:39] [INFO] Robustness models saved.
+
+[2026-04-23 10:26:39] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:39] [INFO] Setup complete.
+[2026-04-23 10:26:39] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:26:39] [INFO] Setup complete.
+[2026-04-23 10:26:44] [INFO] Final tables and figures written.
+[2026-04-23 10:26:44] [INFO] Final tables and figures written.
+[2026-04-23 10:27:59] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:27:59] [INFO] Setup complete.
+[2026-04-23 10:27:59] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:27:59] [INFO] Setup complete.
+[2026-04-23 10:27:59] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:27:59] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:27:59] [INFO] Data source notes updated.
+[2026-04-23 10:27:59] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:27:59] [INFO] Setup complete.
+[2026-04-23 10:27:59] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 10:27:59] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 10:27:59] [INFO] Cleaning report written.
+[2026-04-23 10:27:59] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:27:59] [INFO] Setup complete.
+[2026-04-23 10:27:59] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 10:27:59] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 10:27:59] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:27:59] [INFO] Setup complete.
+[2026-04-23 10:27:59] [INFO] Summary statistics saved.
+[2026-04-23 10:27:59] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:27:59] [INFO] Setup complete.
+[2026-04-23 10:27:59] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 10:27:59] [INFO] Main regression models saved.
+[2026-04-23 10:27:59] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:27:59] [INFO] Setup complete.
+[2026-04-23 10:27:59] [INFO] Robustness models saved.
+[2026-04-23 10:27:59] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:27:59] [INFO] Setup complete.
+[2026-04-23 10:28:01] [INFO] Final tables and figures written.
+[2026-04-23 10:28:24] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:28:24] [INFO] Setup complete.
+[2026-04-23 10:28:24] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:28:24] [INFO] Setup complete.
+[2026-04-23 10:28:24] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:28:25] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:28:25] [INFO] Data source notes updated.
+[2026-04-23 10:28:25] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:28:25] [INFO] Setup complete.
+[2026-04-23 10:28:25] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 10:28:25] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 10:28:25] [INFO] Cleaning report written.
+[2026-04-23 10:28:25] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:28:25] [INFO] Setup complete.
+[2026-04-23 10:28:25] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 10:28:25] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 10:28:25] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:28:25] [INFO] Setup complete.
+[2026-04-23 10:28:25] [INFO] Summary statistics saved.
+[2026-04-23 10:28:25] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:28:25] [INFO] Setup complete.
+[2026-04-23 10:28:25] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 10:28:25] [INFO] Main regression models saved.
+[2026-04-23 10:28:25] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:28:25] [INFO] Setup complete.
+[2026-04-23 10:28:25] [INFO] Robustness models saved.
+[2026-04-23 10:28:25] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:28:25] [INFO] Setup complete.
+[2026-04-23 10:28:27] [INFO] Final tables and figures written.
+[2026-04-23 10:29:00] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:29:00] [INFO] Setup complete.
+[2026-04-23 10:30:03] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:30:03] [INFO] Setup complete.
+[2026-04-23 10:30:03] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:30:04] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:30:04] [INFO] Data source notes updated.
+[2026-04-23 10:30:08] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:30:08] [INFO] Setup complete.
+[2026-04-23 10:30:08] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:30:08] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:30:08] [INFO] Data source notes updated.
+[2026-04-23 10:30:15] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:30:15] [INFO] Setup complete.
+[2026-04-23 10:30:15] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 10:30:15] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 10:30:15] [INFO] Cleaning report written.
+[2026-04-23 10:30:23] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:30:23] [INFO] Setup complete.
+[2026-04-23 10:30:23] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 10:30:23] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 10:30:26] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:30:26] [INFO] Setup complete.
+[2026-04-23 10:30:26] [INFO] Summary statistics saved.
+[2026-04-23 10:30:30] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:30:30] [INFO] Setup complete.
+[2026-04-23 10:30:30] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 10:30:30] [INFO] Main regression models saved.
+[2026-04-23 10:30:34] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:30:34] [INFO] Setup complete.
+[2026-04-23 10:30:34] [INFO] Robustness models saved.
+[2026-04-23 10:30:37] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:30:37] [INFO] Setup complete.
+[2026-04-23 10:30:38] [INFO] Final tables and figures written.
+[2026-04-23 10:31:45] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:31:45] [INFO] Setup complete.
+[2026-04-23 10:31:45] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:31:45] [INFO] Setup complete.
+[2026-04-23 10:31:45] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:31:45] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:31:45] [INFO] Data source notes updated.
+[2026-04-23 10:31:45] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:31:45] [INFO] Setup complete.
+[2026-04-23 10:31:46] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 10:31:46] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 10:31:46] [INFO] Cleaning report written.
+[2026-04-23 10:31:46] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:31:46] [INFO] Setup complete.
+[2026-04-23 10:31:46] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 10:31:46] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 10:31:46] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:31:46] [INFO] Setup complete.
+[2026-04-23 10:31:46] [INFO] Summary statistics saved.
+[2026-04-23 10:31:46] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:31:46] [INFO] Setup complete.
+[2026-04-23 10:31:46] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 10:31:46] [INFO] Main regression models saved.
+[2026-04-23 10:31:46] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:31:46] [INFO] Setup complete.
+[2026-04-23 10:31:46] [INFO] Robustness models saved.
+[2026-04-23 10:31:46] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:31:46] [INFO] Setup complete.
+[2026-04-23 10:31:47] [INFO] Final tables and figures written.
+[2026-04-23 10:53:45] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:53:45] [INFO] Setup complete.
+[2026-04-23 10:53:46] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:53:46] [INFO] Setup complete.
+[2026-04-23 10:53:46] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:53:47] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:53:47] [INFO] Data source notes updated.
+[2026-04-23 10:53:47] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:53:47] [INFO] Setup complete.
+[2026-04-23 10:53:47] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 10:53:47] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 10:53:47] [INFO] Cleaning report written.
+[2026-04-23 10:53:47] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:53:47] [INFO] Setup complete.
+[2026-04-23 10:53:47] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 10:53:47] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 10:53:47] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:53:47] [INFO] Setup complete.
+[2026-04-23 10:53:47] [INFO] Summary statistics saved.
+[2026-04-23 10:53:47] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:53:47] [INFO] Setup complete.
+[2026-04-23 10:53:47] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 10:53:47] [INFO] Main regression models saved.
+[2026-04-23 10:53:47] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:53:47] [INFO] Setup complete.
+[2026-04-23 10:53:47] [INFO] Robustness models saved.
+[2026-04-23 10:53:47] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:53:47] [INFO] Setup complete.
+[2026-04-23 10:53:53] [INFO] Final tables and figures written.
+[2026-04-23 10:56:04] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:56:04] [INFO] Setup complete.
+[2026-04-23 10:56:04] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:56:04] [INFO] Setup complete.
+[2026-04-23 10:56:04] [INFO] Saved raw Grunfeld data.
+[2026-04-23 10:56:04] [WARN] AER is installed, but CardKrueger was not found. DID path will be skipped.
+[2026-04-23 10:56:04] [INFO] Data source notes updated.
+[2026-04-23 10:56:05] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:56:05] [INFO] Setup complete.
+[2026-04-23 10:56:05] [INFO] Saved cleaned Grunfeld data.
+[2026-04-23 10:56:05] [WARN] Raw CardKrueger file not found. Skipping DID cleaning.
+[2026-04-23 10:56:05] [INFO] Cleaning report written.
+[2026-04-23 10:56:05] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:56:05] [INFO] Setup complete.
+[2026-04-23 10:56:05] [INFO] Saved Grunfeld analysis dataset.
+[2026-04-23 10:56:05] [WARN] Clean CardKrueger data not found. Skipping DID construction.
+[2026-04-23 10:56:05] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:56:05] [INFO] Setup complete.
+[2026-04-23 10:56:05] [INFO] Summary statistics saved.
+[2026-04-23 10:56:05] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:56:05] [INFO] Setup complete.
+[2026-04-23 10:56:05] [WARN] No DID analysis data found. Main regression script skipped the DID model.
+[2026-04-23 10:56:05] [INFO] Main regression models saved.
+[2026-04-23 10:56:05] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:56:05] [INFO] Setup complete.
+[2026-04-23 10:56:05] [INFO] Robustness models saved.
+[2026-04-23 10:56:05] [INFO] Project root resolved to C:/R-projects/hello_world
+[2026-04-23 10:56:05] [INFO] Setup complete.
+[2026-04-23 10:56:07] [INFO] Final tables and figures written.

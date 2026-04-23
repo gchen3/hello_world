@@ -1,4 +1,25 @@
-source(file.path("code", "00_setup.R"))
+script_source_files <- vapply(
+  sys.frames(),
+  function(frame) {
+    if (is.null(frame$ofile)) {
+      return(NA_character_)
+    }
+
+    frame$ofile
+  },
+  character(1)
+)
+script_source_files <- script_source_files[!is.na(script_source_files)]
+
+script_dir <- if (length(script_source_files) > 0) {
+  dirname(normalizePath(tail(script_source_files, 1), winslash = "/", mustWork = FALSE))
+} else if (file.exists("00_setup.R")) {
+  normalizePath(".", winslash = "/", mustWork = FALSE)
+} else {
+  normalizePath("code", winslash = "/", mustWork = FALSE)
+}
+
+source(file.path(script_dir, "00_setup.R"))
 
 summarise_variable <- function(data, column, label) {
   values <- data[[column]]

@@ -1,8 +1,31 @@
-source(file.path("code", "00_setup.R"))
+script_source_files <- vapply(
+  sys.frames(),
+  function(frame) {
+    if (is.null(frame$ofile)) {
+      return(NA_character_)
+    }
+
+    frame$ofile
+  },
+  character(1)
+)
+script_source_files <- script_source_files[!is.na(script_source_files)]
+
+script_dir <- if (length(script_source_files) > 0) {
+  dirname(normalizePath(tail(script_source_files, 1), winslash = "/", mustWork = FALSE))
+} else if (file.exists("00_setup.R")) {
+  normalizePath(".", winslash = "/", mustWork = FALSE)
+} else {
+  normalizePath("code", winslash = "/", mustWork = FALSE)
+}
+
+source(file.path(script_dir, "00_setup.R"))
 
 grunfeld_clean <- readRDS(path_dir("data", "interim", "grunfeld_clean.rds"))
 
 grunfeld_analysis <- grunfeld_clean |>
+  dplyr::arrange(firm, year) |>
+  dplyr::group_by(firm) |>
   dplyr::mutate(
     investment = inv,
     market_value = value,
@@ -10,8 +33,15 @@ grunfeld_analysis <- grunfeld_clean |>
     log_invest = log(pmax(investment, 1e-6)),
     log_value = log(pmax(market_value, 1e-6)),
     log_capital = log(pmax(capital_stock, 1e-6)),
+    lag_log_invest = dplyr::lag(log_invest),
+    lag_log_value = dplyr::lag(log_value),
+    lag_log_capital = dplyr::lag(log_capital),
+    delta_log_invest = log_invest - lag_log_invest,
+    delta_log_value = log_value - lag_log_value,
+    delta_log_capital = log_capital - lag_log_capital,
     panel_id = as.integer(firm)
-  )
+  ) |>
+  dplyr::ungroup()
 
 save_rds(grunfeld_analysis, path_dir("data", "processed", "grunfeld_analysis.rds"))
 log_message("Saved Grunfeld analysis dataset.")

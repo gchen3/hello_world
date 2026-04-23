@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex Positron Workflow</title>
+  <style>
+    :root {
+      --page-bg: #f4efe5;
+      --card-bg: #fffdf8;
+      --ink: #1f2a30;
+      --muted: #5f6b73;
+      --accent: #1e5f74;
+      --accent-soft: #dcecf1;
+      --border: #d9d3c5;
+      --code-bg: #f2efe8;
+      --shadow: 0 18px 40px rgba(31, 42, 48, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(30, 95, 116, 0.12), transparent 28%),
+        linear-gradient(180deg, #f9f5ee 0%, var(--page-bg) 100%);
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, rgba(255, 253, 248, 0.96), rgba(247, 242, 232, 0.96));
+      border: 1px solid rgba(30, 95, 116, 0.14);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 40px 36px 30px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 52rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 26px 24px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.45rem;
+      color: var(--accent);
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 12px 1.2rem;
+      padding: 0;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      background: var(--code-bg);
+      border: 1px solid #e4dfd5;
+      border-radius: 6px;
+      padding: 1px 5px;
+      font-size: 0.94em;
+    }
+
+    pre {
+      margin: 16px 0 0;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: #232b2f;
+      color: #f5f1e8;
+      overflow-x: auto;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    pre code {
+      background: transparent;
+      border: 0;
+      color: inherit;
+      padding: 0;
+    }
+
+    .workflow {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      border-left: 4px solid var(--accent);
+      padding: 18px 18px 18px 20px;
+      background: rgba(30, 95, 116, 0.05);
+      border-radius: 0 16px 16px 0;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 1.06rem;
+      margin-bottom: 6px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 24px 16px 48px;
+      }
+
+      .hero,
+      .card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Rendered Workflow</div>
+      <h1>Codex Context for Positron: Simple Research Workflow</h1>
+      <p class="lead">
+        A standalone HTML rendering of the repository workflow for an empirical academic paper.
+        This version is based on <code>example_workflow.md</code> and is meant to be easy to review,
+        share, and open directly in the browser.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Purpose</h2>
+        <p>
+          This repository is for an empirical academic paper. Work like a careful research assistant
+          building a reproducible path from raw data to final tables and figures.
+        </p>
+        <p>
+          Use <strong>R</strong> by default unless a file or instruction clearly requires Python.
+          Prefer code that is easy to read, rerun, and modify in <strong>Positron</strong>.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Core Rules</h2>
+        <ul>
+          <li>Never overwrite raw data.</li>
+          <li>Use relative paths only.</li>
+          <li>Keep scripts idempotent so reruns produce the same outputs.</li>
+          <li>Separate raw data, cleaned data, analysis code, outputs, and paper files.</li>
+          <li>Prefer simple, transparent steps over clever shortcuts.</li>
+          <li>Comment assumptions when something is uncertain.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Suggested Structure</h2>
+      <pre><code>data/
+  raw/
+  interim/
+  processed/
+code/
+  00_setup.R
+  01_download_data.R
+  02_clean_data.R
+  03_construct_variables.R
+  04_descriptive_stats.R
+  05_regressions.R
+  06_robustness.R
+  07_make_outputs.R
+  utils/
+output/
+  tables/
+  figures/
+  logs/
+paper/
+docs/</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Simple Workflow</h2>
+      <div class="workflow">
+        <div class="step">
+          <strong>1. Set up the project</strong>
+          Load packages, create folders if missing, and define shared paths, themes, and helper functions.
+        </div>
+        <div class="step">
+          <strong>2. Get the data</strong>
+          Download or import data into <code>data/raw/</code>, keep an untouched copy of the original file, and record the source and download date.
+        </div>
+        <div class="step">
+          <strong>3. Clean the data</strong>
+          Standardize names, fix types, duplicates, missing values, and obvious inconsistencies, then save cleaned data to <code>data/interim/</code>.
+        </div>
+        <div class="step">
+          <strong>4. Build analysis data</strong>
+          Create analysis variables in a separate script, keep transformations explicit, and save final analysis-ready data to <code>data/processed/</code>.
+        </div>
+        <div class="step">
+          <strong>5. Run analysis and export outputs</strong>
+          Produce descriptive statistics first, then main regressions, robustness checks, and final tables and figures in <code>output/</code>.
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Default Example Data</h2>
+        <ul>
+          <li>For OLS and panel examples, use <code>Grunfeld</code> from <code>plm</code>.</li>
+          <li>For DID examples, use <code>CardKrueger</code> from <code>AER</code> when available.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Preferred Packages</h2>
+        <ul>
+          <li>Data: <code>tidyverse</code>, <code>data.table</code>, <code>janitor</code>, <code>arrow</code></li>
+          <li>Regressions: <code>fixest</code>, <code>plm</code>, <code>broom</code>, <code>modelsummary</code></li>
+          <li>Tables and figures: <code>gt</code>, <code>tinytable</code>, <code>ggplot2</code>, <code>patchwork</code></li>
+          <li>Project setup: <code>here</code>, <code>fs</code>, <code>renv</code></li>
+        </ul>
+        <p><strong>Preference:</strong> Use <code>fixest</code> for most regressions.</p>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Coding Conventions</h2>
+        <ul>
+          <li>Use snake_case for objects and filenames.</li>
+          <li>Use one script per stage of the pipeline.</li>
+          <li>Each script should read prior-stage inputs and write outputs to a fixed location.</li>
+          <li>Avoid hidden state in the global environment.</li>
+          <li>Do not rely on manual clicks inside Positron.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Regression Expectations</h2>
+        <ul>
+          <li>Report sample size.</li>
+          <li>State fixed effects used.</li>
+          <li>State clustering level.</li>
+          <li>Make variable definitions clear.</li>
+          <li>For DID, define <code>treated</code>, <code>post</code>, and the treatment interaction explicitly.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Output Conventions</h2>
+        <ul>
+          <li>Put tables in <code>output/tables/</code>.</li>
+          <li>Put figures in <code>output/figures/</code>.</li>
+          <li>Use stable names such as <code>table_1_summary_statistics.tex</code> and <code>figure_1_distribution.pdf</code>.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>What Codex Should Do</h2>
+        <ol>
+          <li>Inspect the existing structure first.</li>
+          <li>Preserve current naming conventions when they already exist.</li>
+          <li>Make small, testable edits.</li>
+          <li>Keep outputs reusable, not just printed to the console.</li>
+          <li>Document assumptions briefly in code comments or a short note.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>What to Avoid</h2>
+        <ul>
+          <li>Do not mix raw-data cleaning and regression code in one large script.</li>
+          <li>Do not hard-code machine-specific paths.</li>
+          <li>Do not silently drop observations without reporting counts.</li>
+          <li>Do not hide transformations.</li>
+          <li>Do not save paper tables as screenshots.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Minimal Script Responsibilities</h2>
+        <ul>
+          <li><code>00_setup.R</code>: packages, folders, paths, shared defaults</li>
+          <li><code>01_download_data.R</code>: import or download raw data</li>
+          <li><code>02_clean_data.R</code>: basic cleaning and validation</li>
+          <li><code>03_construct_variables.R</code>: create final analysis variables</li>
+          <li><code>04_descriptive_stats.R</code>: sample counts and summary tables</li>
+          <li><code>05_regressions.R</code>: main models</li>
+          <li><code>06_robustness.R</code>: alternative specifications and checks</li>
+          <li><code>07_make_outputs.R</code>: final tables and figures</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Suggested Run Order</h2>
+      <pre><code>source("code/00_setup.R")
+source("code/01_download_data.R")
+source("code/02_clean_data.R")
+source("code/03_construct_variables.R")
+source("code/04_descriptive_stats.R")
+source("code/05_regressions.R")
+source("code/06_robustness.R")
+source("code/07_make_outputs.R")</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Quality Check</h2>
+      <ul>
+        <li>Scripts run from top to bottom without manual intervention.</li>
+        <li>Outputs land in the expected folders.</li>
+        <li>Tables and figures are clearly labeled.</li>
+        <li>Code is easy to adapt when real data replace the example data.</li>
+      </ul>
+    </section>
+
+    <p class="footer-note">
+      Rendered from <code>example_workflow.md</code> for direct browser viewing.
+    </p>
+  </main>
+</body>
+</html>

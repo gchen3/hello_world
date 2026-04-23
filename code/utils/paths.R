@@ -1,10 +1,54 @@
-project_root <- function() {
-  if (requireNamespace("here", quietly = TRUE)) {
-    return(normalizePath(here::here(), winslash = "/", mustWork = FALSE))
+current_source_dir <- function() {
+  source_files <- vapply(
+    sys.frames(),
+    function(frame) {
+      if (is.null(frame$ofile)) {
+        return(NA_character_)
+      }
+
+      frame$ofile
+    },
+    character(1)
+  )
+
+  source_files <- source_files[!is.na(source_files)]
+
+  if (length(source_files) > 0) {
+    return(dirname(normalizePath(tail(source_files, 1), winslash = "/", mustWork = FALSE)))
   }
 
   normalizePath(getwd(), winslash = "/", mustWork = FALSE)
 }
+
+find_project_root <- function(start_dir = current_source_dir()) {
+  current_dir <- normalizePath(start_dir, winslash = "/", mustWork = FALSE)
+
+  repeat {
+    has_git <- dir.exists(file.path(current_dir, ".git"))
+    has_project_layout <- file.exists(file.path(current_dir, "README.md")) &&
+      dir.exists(file.path(current_dir, "code"))
+
+    if (has_git || has_project_layout) {
+      return(current_dir)
+    }
+
+    parent_dir <- dirname(current_dir)
+
+    if (identical(parent_dir, current_dir)) {
+      return(normalizePath(getwd(), winslash = "/", mustWork = FALSE))
+    }
+
+    current_dir <- parent_dir
+  }
+}
+
+project_root <- local({
+  root <- find_project_root()
+
+  function() {
+    root
+  }
+})
 
 path_dir <- function(...) {
   file.path(project_root(), ...)

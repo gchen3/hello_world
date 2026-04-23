@@ -56,7 +56,13 @@ install.packages("AER")
 
 ## Run Order
 
-Run the scripts from the project root in this order:
+Run the full pipeline from the project root with:
+
+```r
+source("run_pipeline.R")
+```
+
+You can also run the scripts one at a time in this order:
 
 ```r
 source("code/00_setup.R")
@@ -69,6 +75,8 @@ source("code/06_robustness.R")
 source("code/07_make_outputs.R")
 ```
 
+The scripts resolve project paths from their own file locations, so they are safe to source from the project root or from inside the `code/` directory.
+
 ## Expected Outputs
 
 After a successful run, the repo will contain starter research artifacts such as:
@@ -78,12 +86,16 @@ After a successful run, the repo will contain starter research artifacts such as
 - `data/processed/grunfeld_analysis.rds`
 - `output/tables/table_1_summary_statistics.csv`
 - `output/tables/table_1_summary_statistics.html`
+- `output/tables/table_0_correlation_matrix.html`
 - `output/tables/table_2_main_results.html`
+- `output/tables/table_2_main_results_journal.html`
+- `output/tables/table_4_model_diagnostics.html`
 - `output/tables/table_a1_robustness.html`
 - `output/figures/figure_1_distribution.png`
 - `output/figures/figure_2_main_relationship.png`
 - `docs/data_sources.md`
 - `output/logs/pipeline.log`
+- `paper/results_memo.html`
 
 If `AER` is installed and `CardKrueger` is available, the pipeline will also create optional DID artifacts.
 

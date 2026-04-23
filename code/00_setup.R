@@ -1,4 +1,25 @@
-source(file.path("code", "utils", "paths.R"))
+setup_source_files <- vapply(
+  sys.frames(),
+  function(frame) {
+    if (is.null(frame$ofile)) {
+      return(NA_character_)
+    }
+
+    frame$ofile
+  },
+  character(1)
+)
+setup_source_files <- setup_source_files[!is.na(setup_source_files)]
+
+setup_dir <- if (length(setup_source_files) > 0) {
+  dirname(normalizePath(tail(setup_source_files, 1), winslash = "/", mustWork = FALSE))
+} else if (file.exists(file.path("utils", "paths.R"))) {
+  normalizePath(".", winslash = "/", mustWork = FALSE)
+} else {
+  normalizePath("code", winslash = "/", mustWork = FALSE)
+}
+
+source(file.path(setup_dir, "utils", "paths.R"))
 
 required_packages <- c(
   "here",
@@ -28,6 +49,13 @@ if (length(missing_packages) > 0) {
 }
 
 ensure_project_dirs()
+
+r_config_dir <- path_dir("output", "logs", "r-config")
+fs::dir_create(r_config_dir)
+Sys.setenv(
+  R_USER_CONFIG_DIR = r_config_dir,
+  XDG_CONFIG_HOME = r_config_dir
+)
 
 ggplot2::theme_set(
   ggplot2::theme_minimal(base_size = 12) +
